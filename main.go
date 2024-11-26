@@ -1,11 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"learn-go-with-tests/dependency_injection"
-	"learn-go-with-tests/hello"
-	"log"
-	"net/http"
+	"learn-go-with-tests/mocks"
 	"os"
 )
 
@@ -34,11 +30,12 @@ func (list *ArrayList2) Get(index int) (interface{}, bool) {
 }
 
 func main() {
-	fmt.Println(hello.Hello("User", ""))
-	dependency_injection.Greet(os.Stdout, "User")
-	log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
-		dependency_injection.Greet(writer, "world")
-	})))
+	//fmt.Println(hello.Hello("User", ""))
+	//dependency_injection.Greet(os.Stdout, "User")
+	mocks.Countdown(os.Stdout, mocks.DefaultSleeper{})
+	//log.Fatal(http.ListenAndServe(":5001", http.HandlerFunc(func(writer http.ResponseWriter, request *http.Request) {
+	//	dependency_injection.Greet(writer, "world")
+	//})))
 
 	//list := ArrayList[int]{}
 	//list.Add(1)
