@@ -28,8 +28,8 @@ func measureTime(call func()) time.Duration {
 }
 
 // return channel of any type, interface{} is an Any/Object type in Go
-func call(url string) chan interface{} {
-	ch := make(chan interface{})
+func call(url string) chan any {
+	ch := make(chan any)
 	go func() {
 		http.Get(url)
 		close(ch) // sends a signal into the channel
