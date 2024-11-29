@@ -99,4 +99,24 @@ func TestWalk(t *testing.T) {
 		})
 	}
 
+	//t.Run("channels", func(t *testing.T) {
+	//	// given
+	//	ch := make(chan Profile)
+	//
+	//	go func() {
+	//		ch <- Profile{Age: 33, City: "Berlin"}
+	//		ch <- Profile{Age: 34, City: "Katowice"}
+	//		close(ch)
+	//	}()
+	//
+	//	// when
+	//	var calls []string
+	//	walk(ch, func(input string) {
+	//		calls = append(calls, input)
+	//	})
+	//
+	//	// then
+	//	assert.Equal(t, []string{"Berlin", "Katowice"}, calls)
+	//})
+
 }
